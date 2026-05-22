@@ -1,0 +1,220 @@
+@import './root.css';
+
+.admin-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-color);
+    padding-top: 84px;
+    box-sizing: border-box;
+}
+
+.admin-page__container {
+    max-width: 650px; 
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+.admin-page__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-input);
+    padding-bottom: 12px;
+}
+
+.admin-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--placeholder-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.admin-tab-btn:hover {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.admin-tab-btn_active {
+    color: var(--form-color) !important;
+    background-color: var(--btn-color) !important;
+}
+
+.admin-section {
+    background-color: var(--form-color);
+    border: 1px solid var(--border-input);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.admin-section__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 24px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-form__row {
+    display: flex;
+    gap: 16px;
+}
+
+.admin-form__row .admin-form__group {
+    flex: 1;
+}
+
+.admin-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-form__group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--placeholder-color);
+}
+
+.admin-form__group input[type="text"],
+.admin-form__group input[type="number"],
+.admin-form__group select {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 14px;
+    background-color: var(--form-color);
+    border: 1px solid var(--border-input);
+    border-radius: 8px;
+    color: var(--text-color);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.admin-form__group input[type="file"] {
+    font-size: 14px;
+    color: var(--text-color);
+    padding: 4px 0;
+}
+
+.admin-form__group input:focus,
+.admin-form__group select:focus {
+    border-color: var(--border-input-focus);
+}
+
+.admin-form__submit-btn {
+    margin-top: 10px;
+    background-color: var(--btn-color);
+    color: var(--form-color);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.admin-form__submit-btn:hover {
+    background-color: var(--btn-focus-color);
+}
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 420px; 
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.admin-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-list::-webkit-scrollbar-thumb {
+    background-color: var(--border-input);
+    border-radius: 10px;
+}
+
+.admin-list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background-color: var(--main-color);
+    border: 1px solid var(--border-input);
+    border-radius: 12px;
+    gap: 16px;
+}
+
+.admin-list__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0; 
+}
+
+.admin-list__name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-list__sub {
+    font-size: 12px;
+    color: var(--placeholder-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-list__empty {
+    text-align: center;
+    color: var(--placeholder-color);
+    font-size: 14px;
+    padding: 32px 0;
+}
+
+.admin-list__delete-btn {
+    background-color: transparent;
+    color: #FF3B30; 
+    border: 1px solid rgba(255, 59, 48, 0.3);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0; 
+    transition: all 0.2s ease;
+}
+
+.admin-list__delete-btn:hover {
+    background-color: #FF3B30;
+    color: #FFFFFF;
+    border-color: #FF3B30;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.15);
+}
+

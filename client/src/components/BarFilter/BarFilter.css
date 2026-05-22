@@ -1,0 +1,103 @@
+@import '../../style/root.css';
+
+.filter-bar {
+    width: 100%;
+    background-color: var(--form-color);
+    border-bottom: 1px solid var(--border-input);
+    padding: 12px 0;
+    margin-bottom: 24px;
+}
+
+.filter-bar__container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.filter-bar__left, 
+.filter-bar__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.filter-select-wrapper {
+    position: relative;
+}
+
+.filter-select {
+    appearance: none; 
+    -webkit-appearance: none;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 36px 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.filter-select:hover {
+    filter: brightness(0.95); 
+}
+
+.filter-select:focus {
+    background-color: var(--form-color);
+    border-color: var(--border-input-focus);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.filter-select-wrapper::after {
+    content: "↓";
+    font-size: 11px;
+    color: var(--placeholder-color);
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.filter-bar__label {
+    font-size: 14px;
+    color: var(--placeholder-color);
+    font-weight: 500;
+}
+
+.sort-buttons {
+    display: flex;
+    background-color: var(--main-color);
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.sort-btn {
+    background: none;
+    border: none;
+    color: var(--placeholder-color);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-btn:hover {
+    color: var(--text-color);
+}
+
+.sort-btn_active {
+    background-color: var(--form-color);
+    color: var(--btn-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}

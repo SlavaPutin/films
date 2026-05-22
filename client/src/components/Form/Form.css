@@ -1,0 +1,100 @@
+@import '../../style/root.css';
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.wrap-form-content{
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.wrap-vhod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vhod{
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+text-align: center;
+color: var(--text-color);
+}
+
+.wrap-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.wrap-input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+
+}
+
+.text-input{
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+color: var(--text-color);
+}
+
+.input-login-reg{
+width: 400px;
+height: 40px;
+background: none;
+border: 2px solid var(--border-input);
+border-radius: 10px;
+padding-left: 10px;
+outline: none;
+}
+
+.input-login-reg:hover{
+    border: 2px solid var(--border-input-focus);
+}
+
+.input-login-reg:focus{
+    border: 2px solid var(--border-input-focus);
+}
+
+.input-login-reg::placeholder{
+    color: var(--placeholder-color);
+}
+
+.under-log-reg{
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+text-decoration: underline;
+color: #3259F3;
+
+
+}
+
+.error-message-block {
+    background-color: rgba(255, 59, 48, 0.08); 
+    color: #FF3B30;
+    border: 1px solid rgba(255, 59, 48, 0.15); 
+    border-radius: 8px; 
+    padding: 10px 14px; 
+    font-size: 14px; 
+    font-weight: 500;
+    margin-bottom: 16px; 
+    text-align: center; 
+    line-height: 1.4; 
+}

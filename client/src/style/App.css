@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import './root.css';
+
+body{
+    font-family: Inter, -apple-system, BlinkMacSystemFont, SF Pro Display, SF Pro Text, Helvetica Neue, sans-serif;   
+    line-height: 1.5;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#root{
+    max-height: 100fr;
+    height: 100vh;
+    max-width: 100fr;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-color) var(--main-color);
+}

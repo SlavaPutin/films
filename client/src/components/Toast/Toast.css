@@ -1,0 +1,95 @@
+@import '../../style/root.css';
+
+/* Базовые стили плашки (стиль Apple: матовое стекло, мягкая тень) */
+.toast-plate {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 320px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 2000;
+    cursor: pointer;
+    user-select: none;
+    animation: slideInToast 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.toast-plate:hover {
+    transform: translateY(-2px);
+}
+
+/* Модификаторы рамок */
+.toast-plate_success {
+    border: 1px solid rgba(16, 124, 65, 0.2);
+}
+
+.toast-plate_error {
+    border: 1px solid rgba(255, 59, 48, 0.2);
+}
+
+.toast-plate__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.toast-plate__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+}
+
+/* Модификаторы цвета заголовков */
+.toast-plate__title_success {
+    color: #107C41;
+}
+
+.toast-plate__title_error {
+    color: #FF3B30;
+}
+
+.toast-plate__title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.toast-plate__text {
+    font-size: 13px;
+    color: var(--text-color, #1D1D1F);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.toast-plate__close-btn {
+    background: transparent;
+    border: none;
+    color: var(--placeholder-color, #696973);
+    cursor: pointer;
+    padding: 2px;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.toast-plate__close-btn:hover {
+    opacity: 1;
+}
+
+@keyframes slideInToast {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

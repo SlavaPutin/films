@@ -1,0 +1,11 @@
+:root{
+    --main-color: #F5F5F7;
+    --form-color: #FFFFFF;
+    --border-input: #D2D2D7;
+    --border-input-focus: #0071E3;
+    --text-color: #1D1D1F;
+    --placeholder-color: #696973;
+    --btn-color: #0071E3;
+    --btn-focus-color: #0077ED;
+    --max-content-width: 550px;
+}
