@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.css'
 import Button from '../UI/Button/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { registration } from '../../store/reducers/User/userActions';
 
@@ -12,7 +12,6 @@ function RegForm() {
     const [name, setName] = useState('')
 
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
     const {error, isLoading} = useAppSelector(state => state.userReducer);
 
     const handleSubmit = (e: React.FormEvent) => {

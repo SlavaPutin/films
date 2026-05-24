@@ -25,7 +25,7 @@ const FilmPage: React.FC = () => {
 
     useEffect(() => {
         dispatch(fetchFilm(Number(id)))
-    }, [dispatch])
+    }, [dispatch, id])
 
     const getRatingColorClass = (score: number) => {
         if (score >= 8) return 'score_high';
