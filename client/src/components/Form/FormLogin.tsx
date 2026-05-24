@@ -15,7 +15,6 @@ function FormLogin() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if(!email || !password) return;
 
         dispatch(login({email, password}))
     }
@@ -45,6 +44,7 @@ function FormLogin() {
                         Password
                     </label>
                     <input 
+                        type='password'
                         className='input-login-reg'
                         placeholder='password'
                         value={password}

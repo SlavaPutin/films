@@ -53,6 +53,9 @@ const Profile: React.FC = () => {
                 setShowDeleteModal(false);
             });
     };
+    const resend = () => {
+        dispatch(resendMail());
+    }
 
     if (isProfileLoading) {
         return <div className="profile-page"><h1>Загрузка профиля...</h1></div>;
@@ -63,11 +66,11 @@ const Profile: React.FC = () => {
     }
 
     if (!profileData) return null;
+
+    
     const isOwner = user?.id === profileData.id;
 
-    const resend = () => {
-        dispatch(resendMail());
-    }
+
 
     return (<>
         <Header/>

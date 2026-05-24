@@ -100,7 +100,6 @@ export class UserService {
 
     async getAll(){
         return this.userModel.findAll({
-            where: {isActivated: true}, 
             attributes: {exclude: ['password', 'refreshToken']}
         });
     }

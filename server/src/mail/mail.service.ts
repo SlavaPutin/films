@@ -1,12 +1,13 @@
 import { MailerService } from '@nestjs-modules/mailer';
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class MailService {
     constructor(private mailerService: MailerService) {}
 
     async sendActivationMail(to: string, link: string) {
-        await this.mailerService.sendMail({
+        try{
+            await this.mailerService.sendMail({
             to,
             subject: 'Активация аккаунта на Films',
             text: '',
@@ -16,6 +17,9 @@ export class MailService {
                     <a href="${link}">${link}</a>
                 </div>
             `,
-        });
+            });
+        }   catch(e){
+            throw new HttpException('Не удалось отправить письмо подтверждения, проверьте правильность почты', HttpStatus.BAD_REQUEST)
+        }
     }
 }

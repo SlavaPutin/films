@@ -14,6 +14,7 @@ import { Rating } from './rating/rating.model';
 import * as path from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { AdminModule } from './admin/admin.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -53,7 +54,8 @@ import { MailerModule } from '@nestjs-modules/mailer';
       defaults: {
         from: '"ScoreApp" <Dgslawa@yandex.ru>',
       }
-    })
+    }),
+    AdminModule
   ],
   controllers: [],
   providers: [],

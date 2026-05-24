@@ -8,9 +8,9 @@ import { removeUser } from '../store/reducers/User/userActions';
 import { $api } from '../api';
 import '../style/AdminPage.css';
 
-// Локальные интерфейсы для вывода списков в админке
 interface IAdminFilm { id: number; title: string; director: string; year: number | string; }
 interface IAdminUser { id: number; name: string; email: string; }
+interface IStats { totalFilms: number; totalUsers: number; totalReviews: number; averageRating: number; }
 
 const AdminPage: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -25,6 +25,7 @@ const AdminPage: React.FC = () => {
 
     const [filmsList, setFilmsList] = useState<IAdminFilm[]>([]);
     const [usersList, setUsersList] = useState<IAdminUser[]>([]);
+    const [stats, setStats] = useState<IStats | null>(null);
 
     const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
     const [deleteTarget, setDeleteTarget] = useState<{ id: number; type: 'film' | 'user' } | null>(null);
@@ -38,6 +39,13 @@ const AdminPage: React.FC = () => {
             $api.get<IAdminUser[]>('/user').then(res => setUsersList(res.data)).catch(() => {});
         }
     }, [activeTab]);
+
+    useEffect(() => {
+    $api.get<IStats>('/admin/stats')
+        .then(res => setStats(res.data))
+        .catch(err => console.error("Не удалось загрузить статистику:", err));
+    }, []);
+
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
@@ -91,6 +99,28 @@ const AdminPage: React.FC = () => {
         <div className="admin-page">
             <div className="admin-page__container">
                 <h1 className="admin-page__title">Панель администратора</h1>
+                {stats && (
+                    <div className="admin-stats">
+                        <div className="admin-stats__card">
+                            <span className="admin-stats__label">Всего фильмов</span>
+                            <span className="admin-stats__value">{stats.totalFilms}</span>
+                        </div>
+                        <div className="admin-stats__card">
+                            <span className="admin-stats__label">Пользователей</span>
+                            <span className="admin-stats__value">{stats.totalUsers}</span>
+                        </div>
+                        <div className="admin-stats__card">
+                            <span className="admin-stats__label">Оставлено отзывов</span>
+                            <span className="admin-stats__value">{stats.totalReviews}</span>
+                        </div>
+                        <div className="admin-stats__card">
+                            <span className="admin-stats__label">Средний рейтинг</span>
+                            <span className="admin-stats__value admin-stats__value_blue">
+                                {stats.averageRating.toFixed(1)}
+                            </span>
+                        </div>
+                    </div>
+                )}
                 <div className="admin-tabs">
                     <button 
                         className={`admin-tab-btn ${activeTab === 'create' ? 'admin-tab-btn_active' : ''}`} 

@@ -29,3 +29,9 @@ a {
     scrollbar-width: thin;
     scrollbar-color: var(--text-color) var(--main-color);
 }
+
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+}

@@ -245,3 +245,52 @@
     }
 }
 
+
+
+@media (max-width: 768px) {
+    .film-page__container {
+        padding: 0 16px 40px 16px;
+    }
+
+    .film-main {
+        flex-direction: column; 
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .film-main__poster-block {
+        flex: initial;
+        width: 100%;
+        max-width: 240px; 
+        margin: 0 auto;
+    }
+
+    .film-main__title {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .film-main__meta {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .film-main__details {
+        align-items: center; 
+    }
+    
+    .film-main__row {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-review-section {
+        padding: 20px;
+    }
+
+    .add-review-form__submit-btn {
+        width: 100%; 
+        text-align: center;
+    }
+}

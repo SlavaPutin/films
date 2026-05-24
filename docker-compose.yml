@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:18-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=films
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./server
+    depends_on:
+      - db
+    ports:
+      - '5000:5000'
+    environment:
+      - NODE_ENV=production
+      - HOST_DB=db  
+      - PORT_DB=5432
+      - USERNAME_DB=postgres
+      - PASSWORD=root
+      - DATABASE=films
+      - SECRET_KEY_ACCESS=Filmsaccesss
+
+  frontend:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"   # React будет доступен на localhost:3001
+    depends_on:
+      - backend       # фронт не запустится раньше бэкенда

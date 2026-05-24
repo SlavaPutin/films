@@ -13,8 +13,8 @@ interface UserState {
     user: IUser | null;
     profileData: any | null;
     isAuth: boolean;
-    isLoading: boolean;        // Для глобальных процессов (логин, проверка сессии, регистрация)
-    isProfileLoading: boolean; // ВАЖНО: отдельный флаг загрузки только для страниц профилей
+    isLoading: boolean;        
+    isProfileLoading: boolean; 
     error: string;
 }
 
@@ -23,7 +23,7 @@ const initialState: UserState = {
     profileData: null,
     isAuth: false,
     isLoading: false,
-    isProfileLoading: false,   // Изначально профиль не загружается
+    isProfileLoading: false,  
     error: ""
 };
 

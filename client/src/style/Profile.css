@@ -187,7 +187,6 @@
     flex-wrap: wrap;
 }
 
-/* Сбрасываем лишний margin-top у старой кнопки, так как теперь есть общая обертка */
 .profile-info__logout-btn {
     margin-top: 0 !important;
 }
@@ -197,7 +196,7 @@
     align-items: center;
     gap: 8px;
     background-color: transparent;
-    color: #FF3B30; /* Сразу красный Apple */
+    color: #FF3B30; 
     border: 1px solid rgba(255, 59, 48, 0.2);
     padding: 8px 16px;
     border-radius: 8px;
@@ -214,3 +213,56 @@
     box-shadow: 0 4px 12px rgba(255, 59, 48, 0.15);
 }
 
+
+@media (max-width: 768px) {
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px;
+        gap: 16px;
+    }
+
+    .profile-info__name-row {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .profile-info__avatar {
+        width: 96px;
+        height: 96px;
+        font-size: 28px;
+    }
+
+    .profile-info__actions-row {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .profile-info__logout-btn,
+    .profile-info__delete-btn {
+        width: 100%;
+        max-width: 260px; 
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .activation-banner {
+        padding: 16px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .activation-banner__actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .activation-banner__btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}

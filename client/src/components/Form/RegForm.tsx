@@ -18,12 +18,10 @@ function RegForm() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         dispatch(registration({email, password, name}))
-            .unwrap()
-            .then(()=> {
-                navigate('/')
-            })
 
     }
+
+    
 
 
     return (      
@@ -51,6 +49,7 @@ function RegForm() {
                         Password
                     </label>
                     <input 
+                        type='password'
                         className='input-login-reg'
                         placeholder='password'
                         value={password}
