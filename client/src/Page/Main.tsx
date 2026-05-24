@@ -57,7 +57,7 @@ function Main() {
                 observer.unobserve(currentTarget);
             }
         };
-    }, [hasMore, isLoading, dispatch, error, currentPage, genre, year, sortOrder]);
+    }, [hasMore, isLoading, dispatch, error, currentPage, genre, year, sortOrder, films.length]);
     return (
         <>
             <Header/>
