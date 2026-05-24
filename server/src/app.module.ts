@@ -22,7 +22,7 @@ import { AdminModule } from './admin/admin.module';
       isGlobal: true
     }),
     SequelizeModule.forRoot({
-      dialect: 'postgres', // или 'mysql', 'sqlite' и др.
+      dialect: 'postgres', 
       host: process.env.HOST_DB,
       port: Number(process.env.PORT_DB),
       username: process.env.USERNAME_DB,
@@ -31,7 +31,13 @@ import { AdminModule } from './admin/admin.module';
       models: [User, Role, UserRole, Film, Rating],
       autoLoadModels: true,
       synchronize: true, 
-      sync: { alter: true}
+      sync: { alter: true},
+      dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false 
+      }
+    }
     }),
     UserModule,
     RoleModule,
