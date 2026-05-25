@@ -32,12 +32,12 @@ import { AdminModule } from './admin/admin.module';
       autoLoadModels: true,
       synchronize: true, 
       sync: { alter: true},
-      dialectOptions: {
+      dialectOptions: process.env.DB_SSL == 'true' ?{
       ssl: {
         require: true,
         rejectUnauthorized: false 
       }
-    }
+    } : {}
     }),
     UserModule,
     RoleModule,
